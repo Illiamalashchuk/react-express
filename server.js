@@ -94,7 +94,7 @@ router.route('/recipes/:recipe_id')
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
-app.use(express.static('static'));
+app.use(express.static(__dirname + '/public'));
 
 // START THE SERVER
 // =============================================================================
