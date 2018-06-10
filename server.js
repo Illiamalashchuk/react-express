@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-// var port = process.env.PORT || 5000;
+var port = process.env.PORT || 5000;
 var router = express.Router();   // get an instance of the express Router
 var Recipe = require('./models/recipe');
 
@@ -11,13 +11,6 @@ var Recipe = require('./models/recipe');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('client/build'));
-}
-
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
 
 mongoose.connect('mongodb://illiamalashchuk:football.ua123@ds127536.mlab.com:27536/malashchuk-database'); // connect to our database
 
@@ -101,9 +94,10 @@ router.route('/recipes/:recipe_id')
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
+app.use(express.static(__dirname + '/public'));
 
 // START THE SERVER
 // =============================================================================
-// app.listen(port);
-// console.log('Magic happens on port ' + port);
+app.listen(port);
+console.log('Magic happens on port ' + port);
 
