@@ -18,7 +18,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:5000/api/recipes/`) // get recipes
+        axios.get(`http://malashchuk-cookbook.herokuapp.com/api/recipes/`) // get recipes
         .then(res => {
             const recipes = res.data;
             this.setState({ recipes });
