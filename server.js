@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var port = process.env.PORT || 5000;
+// var port = process.env.PORT || 5000;
 var router = express.Router();   // get an instance of the express Router
 var Recipe = require('./models/recipe');
 
@@ -104,6 +104,6 @@ app.use('/api', router);
 
 // START THE SERVER
 // =============================================================================
-app.listen(port);
-console.log('Magic happens on port ' + port);
+// app.listen(port);
+// console.log('Magic happens on port ' + port);
 
