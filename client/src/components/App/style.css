@@ -1,0 +1,22 @@
+.jumbotron {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: url(./media/background.jpg) no-repeat center;
+    background-color: transparent !important;
+    background-size: cover;
+}
+.container {
+    border-radius: 10px;
+}
+.app-title {
+    font-size: 3rem;
+    color: #fff;
+    background-color: rgba(167, 168, 163, 0.8);
+    margin: 0;
+    padding: 10px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+.add-recipe {
+    margin-top: 50px;
+}

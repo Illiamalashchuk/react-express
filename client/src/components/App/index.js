@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
-import RecipeList from './RecipeList'
-import Modal from './Modal/index'
-import 'bootstrap/dist/css/bootstrap.css'
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.css'
+import RecipeList from '../RecipeList'
+import Modal from '../Modal'
+import './style.css'
+
 
 
 
@@ -32,10 +34,11 @@ class App extends Component {
         return (
             <div className="container">
                 <div className="jumbotron">
-                    <h1>Cookbook</h1>
+                    <h1 className="app-title">Cookbook</h1>
                     <div className="clearfix">
-                        <button className="btn btn-success btn-lg float-right" onClick={this.handleClick.bind(this)}>Add new recipe</button>
                     </div>
+                    <button className="btn btn-success btn-lg float-right add-recipe" onClick={this.handleClick.bind(this)}>Add new recipe</button>
+                    <div className="clearfix"></div>
                 </div>
                 <RecipeList 
                     reload={this.componentDidMount} 

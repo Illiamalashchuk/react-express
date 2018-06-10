@@ -1,0 +1,12 @@
+.recipe-text {
+    margin-bottom: 10px;
+}
+.date-string {
+    padding: 10px 0 0 10px;
+}
+.date-string__text {
+    color: #000;
+}
+.delete-button {
+    margin-right: 20px;
+}

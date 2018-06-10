@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import Modal from '../Modal/index'
-import './article-style.css'
+import './style.css'
 import axios from 'axios'
 
 
@@ -35,15 +35,15 @@ class Recipe extends PureComponent {
                     <h2>
                         {recipe.name}                        
                     </h2>
-                    <h6 className="card-subtitle text-muted">
-                        create date: {(new Date(recipe.date)).toDateString()}
+                    <h6 className="card-subtitle text-muted date-string">
+                        <span className="date-string__text">creation date: </span>{(new Date(recipe.date)).toDateString()}
                     </h6>
                 </div>
                 <div className="card-body">
                     <div className="card-text">
-                        <section className="article-text">{recipe.description}</section>
+                        <section className="recipe-text">{recipe.description}</section>
                         <button className="btn btn-primary btn-sm float-right" onClick={this.handleClick.bind(this)}>Edit</button>
-                        <button className="btn btn-danger btn-sm float-right" onClick={this.handleDeleteClick.bind(this)}>Delete</button>
+                        <button className="btn btn-danger btn-sm float-right delete-button" onClick={this.handleDeleteClick.bind(this)}>Delete</button>
                     </div>
                 </div>
                 <Modal 
