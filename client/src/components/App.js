@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import RecipeList from './RecipeList'
-// import AddRecipe from './AddRecipe'
 import Modal from './Modal/index'
 import 'bootstrap/dist/css/bootstrap.css'
 import axios from 'axios'
@@ -30,7 +29,6 @@ class App extends Component {
     }
 
     render() {
-        console.log('app render')
         return (
             <div className="container">
                 <div className="jumbotron">
@@ -38,10 +36,11 @@ class App extends Component {
                     <div className="clearfix">
                         <button className="btn btn-success btn-lg float-right" onClick={this.handleClick.bind(this)}>Add new recipe</button>
                     </div>
-                    {/* <AddRecipe reload = {this.componentDidMount.bind(this)}/>
-                    onButtonClick = {this.handleClick.bind(this, article.id)} */}
                 </div>
-                <RecipeList recipes={this.state.recipes} />
+                <RecipeList 
+                    reload={this.componentDidMount} 
+                    self={this} 
+                    recipes={this.state.recipes} />
                 <Modal 
                     isOpen={this.state.isOpen}
                     onButtonClick = {this.handleClick.bind(this)}

@@ -1,0 +1,10 @@
+.recipe-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+.recipe-input {
+    width: 90%;
+}
+.description {
+    height: 70px!important;
+}

@@ -19,14 +19,16 @@ class Recipe extends PureComponent {
     handleDeleteClick() {
         axios.delete(`http://localhost:5000/api/recipes/${this.props.recipe._id}`)
         .then(res => {
-            console.log(res);
             console.log(res.data);
+            this.props.reload()
         })
     }
 
     
     render() {
         const {recipe} = this.props
+        const self = this.props.self
+        const reload = this.props.reload
         return (
             <div className="card mx-auto" style={{width: '70%'}}>
                 <div className="card-header">
@@ -49,6 +51,8 @@ class Recipe extends PureComponent {
                     onButtonClick = {this.handleClick.bind(this)}
                     recipe = {recipe}
                     title = {`Edit recipe - ${recipe.name}`}
+                    reload={reload} 
+                    self={self}
                 />  
             </div> 
         )
