@@ -11,6 +11,13 @@ var Recipe = require('./models/recipe');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+}
+
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 mongoose.connect('mongodb://illiamalashchuk:football.ua123@ds127536.mlab.com:27536/malashchuk-database'); // connect to our database
 
