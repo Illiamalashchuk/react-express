@@ -1,9 +1,27 @@
-.test {
-    background-color: rgba(0, 0, 0, 0.8) 
+.main-block {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: block;
 }
 .close-button {
-    margin-left: 62%;
+    margin-left: 70%;
 }
-.modal-dialog {
-    margin: 10.75rem auto;
+.modal-header,
+.modal-body {
+    padding: 0.6rem
+}
+
+@media screen and (max-width: 480px) {
+    .close-button {
+        margin-left: 65%;
+    }
+}
+@media screen and (max-width: 420px) {
+    .close-button {
+        margin-left: 60%;
+    }
+}
+@media screen and (max-width: 360px) {
+    .close-button {
+        margin-left: 50%;
+    }
 }

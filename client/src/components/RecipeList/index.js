@@ -7,11 +7,15 @@ class RecipeList extends PureComponent {
         const self = this.props.self
         const reload = this.props.reload
         const recipeElements = this.props.recipes.map((recipe, index) =>
-            <li key={recipe._id} className="article-list__li">
-                <Recipe recipe = {recipe} reload={reload.bind(self)} self={self}/>
+            <li key={recipe._id} className="recipe-list__li">
+                <Recipe 
+                    recipe = {recipe}           
+                    reload={reload.bind(self)} // push inside for getting all recipes after updating/removing one
+                    self={self}                // with context(this context`s parent is App)
+                />
             </li>)
         return (
-            <ul>
+            <ul className="recipe-list__ul">
                 {recipeElements}
             </ul>
         )

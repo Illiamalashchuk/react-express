@@ -1,3 +1,7 @@
+.card {
+    width: 70%
+}
+
 .recipe-text {
     margin-bottom: 10px;
 }
@@ -9,4 +13,34 @@
 }
 .delete-button {
     margin-right: 20px;
+}
+.card {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 920px) {
+    .card {
+        width: 90%
+    }
+    .recipe-name {
+        font-size: 1.6rem;
+    }
+    .date-string {
+        font-size: 0.8rem;
+    }
+    .recipe-text {
+        font-size: 0.95rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .recipe-text {
+        font-size: 0.75rem;
+    }
+    .recipe-name {
+        font-size: 1.4rem;
+    }
+    .edit-button,
+    .delete-button {
+        font-size: 0.75rem;
+    }
 }

@@ -1,3 +1,7 @@
-.article-list__li {
+.recipe-list__ul {
+    margin: 0;
+    padding: 0;
+}
+.recipe-list__li {
     list-style: none;
 }

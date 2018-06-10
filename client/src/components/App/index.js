@@ -12,19 +12,19 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            recipes: [],
-            isOpen: false
+            recipes: [], // save all recipes
+            isOpen: false // state for modal window
         }
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:5000/api/recipes/`)
+        axios.get(`http://localhost:5000/api/recipes/`) // get recipes
         .then(res => {
             const recipes = res.data;
             this.setState({ recipes });
         });
     }
-    handleClick() {
+    handleClick() { // change the state of modal window
         this.setState({
             isOpen: !this.state.isOpen
         });
@@ -41,13 +41,14 @@ class App extends Component {
                     <div className="clearfix"></div>
                 </div>
                 <RecipeList 
-                    reload={this.componentDidMount} 
-                    self={this} 
+                    reload={this.componentDidMount} // move this f to the nex component
+                    self={this}                     // with context
                     recipes={this.state.recipes} />
                 <Modal 
                     isOpen={this.state.isOpen}
-                    onButtonClick = {this.handleClick.bind(this)}
-                    reload={this.componentDidMount.bind(this)}
+                    onButtonClick = {this.handleClick.bind(this)} // move this f to close modal from itself
+                    context={this}                                // with it`s context
+                    reload={this.componentDidMount.bind(this)}    // move for getting all recipes after posting
                     title = {'Create new recipe'}
                 />
             </div>
