@@ -21,7 +21,7 @@ class AddRecipe extends Component {
     handleSubmit(event) {                       // posting new recipe / updating existing recipe
         event.preventDefault();
         if (!this.props.recipe) {
-            axios.post(`http://malashchuk-cookbook.herokuapp.com/api/recipes`, {  // posting
+            axios.post(`https://malashchuk-cookbook.herokuapp.com/api/recipes`, {  // posting
                 name: this.state.name,
                 description: this.state.description
             })
@@ -37,7 +37,7 @@ class AddRecipe extends Component {
                 this.props.closeModal()
             }.bind(this), 500)
         } else {
-            axios.put(`http://malashchuk-cookbook.herokuapp.com/api/recipes/${this.props.recipe._id}`, {  // updating
+            axios.put(`https://malashchuk-cookbook.herokuapp.com/api/recipes/${this.props.recipe._id}`, {  // updating
                 name: this.state.name,
                 description: this.state.description
             })

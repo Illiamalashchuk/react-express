@@ -17,7 +17,7 @@ class Recipe extends PureComponent {
         });
     }
     handleDeleteClick() {           // delete recipe
-        axios.delete(`http://malashchuk-cookbook.herokuapp.com/api/recipes/${this.props.recipe._id}`)
+        axios.delete(`https://malashchuk-cookbook.herokuapp.com/api/recipes/${this.props.recipe._id}`)
         .then(res => {
             console.log(res.data);
             this.props.reload() // get all recipes and push them in recipes[] in App
