@@ -10,15 +10,7 @@ var Recipe = require('./models/recipe');
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
-    res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    next();
-  });
+
 
 mongoose.connect('mongodb://illiamalashchuk:football.ua123@ds127536.mlab.com:27536/malashchuk-database'); // connect to our database
 
@@ -102,7 +94,6 @@ router.route('/recipes/:recipe_id')
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
-app.use(express.static('static'));
 
 // START THE SERVER
 // =============================================================================
